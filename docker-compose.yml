@@ -1,0 +1,16 @@
+services:
+  nx-daemon-issue:
+    build:
+      context: .
+      dockerfile: ./apps/nx-daemon-issue/Dockerfile
+      target: development
+    command: npx nx run nx-daemon-issue:serve
+
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - my-network
+
+networks:
+  my-network:

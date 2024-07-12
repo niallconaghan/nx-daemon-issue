@@ -1,0 +1,24 @@
+{
+  "name": "nx-daemon-issue",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nx-daemon-issue/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "nx-daemon-issue:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nx-daemon-issue:build:development"
+        },
+        "production": {
+          "buildTarget": "nx-daemon-issue:build:production"
+        }
+      }
+    }
+  }
+}
